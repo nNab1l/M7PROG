@@ -1,0 +1,149 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #B7CADB, #54BAB9);
+  font-family: "Open Sans", sans-serif;
+  color: #483434;
+  padding: 4rem;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonAndAvatarWrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.upgrades {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background: whitesmoke;
+  gap: 2rem;
+  width: max-content;
+  border-radius: 1rem;
+}
+.upgrades__upgrade {
+  padding: 2rem;
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: 5% 95%;
+}
+.upgrades__upgrade > i {
+  transform: translateY(-10%);
+  color: #483434;
+}
+
+.save {
+  font-size: 100%;
+  height: min-content;
+  padding: 2rem;
+  background: #483434;
+  color: whitesmoke;
+  border: none;
+  width: 20rem;
+  transform: translateY(2.5rem);
+  border-radius: 0.5rem;
+}
+
+.avatar {
+  width: 10rem;
+  height: 10rem;
+  background: #C69B7B;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 0.6rem solid #483434;
+}
+.avatar__head {
+  width: 40%;
+  height: 40%;
+  background: #483434;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.avatar__body {
+  width: 70%;
+  height: 50%;
+  background: #483434;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 100%;
+}
+
+.cookie {
+  width: 40rem;
+  background: #C69B7B;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  box-shadow: inset 0 0 10rem 0 #483434;
+  position: relative;
+  overflow: hidden;
+  border: 1rem solid #483434;
+}
+.cookie__spots {
+  width: 7rem;
+  aspect-ratio: 1/1;
+  background: #483434;
+  border-radius: 48%;
+  position: absolute;
+}
+.cookie__spots--first {
+  top: 10%;
+  left: 5%;
+}
+.cookie__spots--second {
+  right: 10%;
+  top: 5%;
+}
+.cookie__spots--third {
+  right: 5%;
+  bottom: 10%;
+}
+.cookie__spots--fourth {
+  left: 5%;
+  bottom: 10%;
+}
+.cookie__spots--fifth {
+  left: 40%;
+  top: 20%;
+}
+.cookie__spots--sixth {
+  left: 35%;
+  bottom: 15%;
+}
+.cookie__spots--seventh {
+  left: 35%;
+  top: -10%;
+}
+
+/*# sourceMappingURL=tyle.css.map */
