@@ -19,6 +19,7 @@ class Cookie{
     }
 
     onStyleChangesecond(){
+        this.htmlElement.classList.remove("cookie--chocolate");
         this.htmlElement.classList.add("cookie--velvet");
     }
 }
