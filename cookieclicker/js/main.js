@@ -59,6 +59,11 @@ class Score{
         this.score = this.score + 10000;
         this.htmlElement.innerText = this.score;
     }
+
+    scoreLoaded(newScore){
+        this.score = newScore;
+        this.htmlElement.innerText = this.score;
+    }
 }
 
 
@@ -116,11 +121,13 @@ class ChocolateCookie{
         this.htmlElement = htmlElement;
         this.cookie = cookie;
         this.htmlElement.onclick = this.onChocolateCookieClicked;
+        window.localStorage.setItem("chocolateCookie", this.bought);
     }
 
     onChocolateCookieClicked = () => {
         if(this.bought === false){
             this.bought = true;
+            window.localStorage.setItem("chocolateCookie", this.bought);
             this.cookie.onStyleChange();
             this.cookie.score.addPoints();
         }
@@ -148,10 +155,41 @@ class VelvetCookie{
     }
 }
 
+class Save{
+    htmlElement;
+
+    constructor(newHTMLElement){
+        this.htmlElement = newHTMLElement;
+        this.htmlElement.onclick = this.onSaveButtonClicked;
+
+    }
+
+    onSaveButtonClicked = () => {
+        window.localStorage.setItem("score", score.score);
+    }
+}
+
+class Load{
+    score;
+
+    constructor(score){
+        this.score = score;
+
+        this.onLoad();
+    }
+
+    onLoad = function(){
+        const scoreFromLocalStorage = parseInt(window.localStorage.getItem("score"));
+        if (typeof scoreFromLocalStorage === 'number'){
+            this.score.scoreLoaded(scoreFromLocalStorage);
+        } 
+    }
+}
+
 
 
 /*setup for score and cookie*/
-const score = new Score(0, "Default Score", document.getElementById("js--score"));
+const score = new Score(333, "Default Score", document.getElementById("js--score"));
 const cookie = new Cookie("Default Cookie", document.getElementById("js--cookie"), score);
 
 /*setup for desktop upgrades*/
@@ -159,6 +197,8 @@ const multiply = new Multiplier(document.getElementById("js--multiplier"), cooki
 const auto = new AutoScore(document.getElementById("js--autoScore"), score);
 const chocolate = new ChocolateCookie(document.getElementById("js--chocolate"), cookie);
 const velvet = new VelvetCookie(document.getElementById("js--velvet"), cookie);
+const save = new Save(document.getElementById("js--save"));
+const load = new Load(score);
 
 /*setup mobile upgrades*/
 const multiplierMobile = new Multiplier(document.getElementById("js--multiply--mobile"), cookie);

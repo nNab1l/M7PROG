@@ -1,0 +1,7 @@
+@use "../../abstracts/colors";
+
+/*only works for firefox*/
+body {
+scrollbar-color:map-get(colors.$baseColors, "backgroundDark") white;
+
+}

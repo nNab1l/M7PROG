@@ -1,0 +1,21 @@
+@use "../../abstracts/colors";
+
+.avatarWrapper{
+    height: 100%;
+    width: 100%;
+    grid-column-start: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.avatar{
+    width: 10rem;
+    height: 10rem;
+    background: map-get(colors.$baseColors, "backgroundDark");
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 0.6rem solid map-get(colors.$baseColors, "backgroundDark");
+    cursor: pointer;
+}
